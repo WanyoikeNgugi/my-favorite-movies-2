@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Favorite Movies</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="slideShowTransition">
+      <div class="slideshow">
+        <img src="./pictures/movie1.jpeg" alt="movie1" />
+        <img src="./pictures/movie2.jpeg" alt="movie2" />
+        <img src="./pictures/movie3.jpeg" alt="movie3" />
+        <img src="./pictures/movie4.jpeg" alt="movie4" />
+        <img src="./pictures/movie5.jpeg" alt="movie5" />
+        <img src="./pictures/movie6.jpeg" alt="movie6" />
+        <img src="./pictures/movie7.jpeg" alt="movie7" />
+        <img src="./pictures/movie8.jpeg" alt="movie8" />
+      </div>
+      <div class="content-container">
+        <div class="recent">
+          <img src="./pictures/movie9.jpeg" alt="movie9" />
+          <img src="./pictures/movie10.jpeg" alt="movie10" />
+          <img src="./pictures/movie11.jpeg" alt="movie11" />
+          <img src="./pictures/movie12.jpeg" alt="movie12" />
+          <img src="./pictures/movie13.jpeg" alt="movie13" />
+          <img src="./pictures/movie14.jpeg" alt="movie14" />
+          <img src="./pictures/movie15.jpeg" alt="movie15" />
+          <img src="./pictures/movie16.jpeg" alt="movie16" />
+          <img src="./pictures/movie1.jpeg" alt="movie1" />
+          <img src="./pictures/movie2.jpeg" alt="movie2" />
+          <img src="./pictures/movie3.jpeg" alt="movie3" />
+          <img src="./pictures/movie4.jpeg" alt="movie4" />
+          <img src="./pictures/movie5.jpeg" alt="movie5" />
+          <img src="./pictures/movie6.jpeg" alt="movie6" />
+          <img src="./pictures/movie7.jpeg" alt="movie7" />
+          <img src="./pictures/movie8.jpeg" alt="movie8" />
+        </div>
+      </div>
+
+      <button class="scroll-left-button">&lt;</button>
+      <button class="scroll-right-button">&gt;</button>
+      <div class="container">
+        <h2>My Favorite Movies</h2>
+
+        <button type="button" id="new-movie" class="btn btn-sm btn-primary">
+          Add New Movie
+        </button>
+
+        <div id="new-movie-form">
+          <div id="status" class="error"></div>
+
+          <form id="movieform" name="movieform" class="movie-form">
+            <div class="form-group">
+              <label for="title">Title:</label>
+              <input type="text" class="form-control" id="title" />
+            </div>
+            <div class="form-group">
+              <label for="img">Image:</label>
+              <input type="text" class="form-control" id="img" />
+            </div>
+
+            <div class="form-group">
+              <label for="rating">Rating:</label>
+              <input type="number" class="form-control" id="rating" />
+            </div>
+
+            <!--<button type="button" id="save-new-movie" class="btn btn-primary"  Save</button>
+    OR
+    -->
+            <input
+              class="btn btn-sm btn-primary"
+              type="submit"
+              value="Save"
+              id="save-new-movie"
+              onClick="addMovie(event)"
+            />
+          </form>
+        </div>
+        <div id="table"></div>
+      </div>
+    </div>
+  </body>
+  <script src="./movies.js"></script>
+</html>
