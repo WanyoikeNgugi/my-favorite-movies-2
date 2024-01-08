@@ -90,3 +90,29 @@
   left: 0;
   transition: transform 1s ease; /* Apply a smooth transition */
 }
+.movie {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+.movie_video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.movie:hover .movie_video {
+  transform: scale(1.1);
+}
+.play-button {
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

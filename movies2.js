@@ -292,3 +292,30 @@ scrollRightButton.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+const movie1 = document.querySelector(".movie_video");
+movie1.addEventListener("mouseover", function () {
+  this.play();
+
+  const duration = 60;
+  setTimeout(() => {
+    this.pause();
+    this.currentTime = 0;
+  }, duration * 1000);
+});
+movie1.addEventListener("mouseout", function () {
+  this.pause();
+  this.currentTime = 0;
+});
+const playButton = document.querySelector(".play-button");
+const movieVideo = document.querySelector(".movie_video");
+
+playButton.addEventListener("click", function () {
+  if (movieVideo.paused) {
+    movieVideo.style.display = "block";
+    movieVideo.play();
+    playButton.textContent = "pause";
+  } else {
+    movieVideo.pause();
+    playButton.textContent = "play";
+  }
+});
