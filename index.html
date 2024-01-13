@@ -104,10 +104,24 @@
 
       <div class="movie">
         <video class="movie_video" loop>
-          <source src="./movieVideo.mp4" type="video/mp4" />
+          <source src="./movieVideo2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <button class="play-button">Play</button>
+        <div class="progress">
+          <input type="range" min="0" value="0" class="progress-bar" />
+        </div>
+        <div id="volume-controls">
+          <button id="volume-icon">🔊</button>
+          <input
+            type="range"
+            id="volume-slider"
+            min="0"
+            max="1"
+            step="0.1"
+            value="1"
+          />
+        </div>
       </div>
     </div>
   </body>
