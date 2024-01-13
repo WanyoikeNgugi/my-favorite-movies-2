@@ -332,7 +332,7 @@ movie1.addEventListener("mouseover", function () {
   }, 100);
   movie1.addEventListener("mouseout", () => {
     clearInterval(intervalId);
-    if (isSeeking) {
+    if (isSeeking || playButton.textContent === "pause") {
       playVideo();
     } else {
       stopVideo();
@@ -378,9 +378,9 @@ volumeSlider.addEventListener("input", updateVolumeIcon);
 volumeSlider.addEventListener("change", setVolume);
 
 function updateVolumeIcon() {
-  const volume = volumeSlider.value;
+  let volume = volumeSlider.value;
 
-  if ((volume = "0")) {
+  if (volume == "0") {
     volumeIcon.textContent = "🔇";
   } else if (volume < 0.5) {
     volumeIcon.textContent = "🔉";
@@ -391,4 +391,37 @@ function updateVolumeIcon() {
 function setVolume() {
   const volume = volumeSlider.value;
   movie1.volume = volume;
+}
+volumeIcon.addEventListener("click", function () {
+  volumeIcon.textContent = "🔇";
+  volumeSlider.value = "0";
+  volume = volumeSlider.value;
+  movie1.volume = volume;
+});
+const fullscreenButton = document.getElementById("fullscreen-button");
+
+fullscreenButton.addEventListener("click", toggleFullScreen);
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    if (movie1.requestFullscreen) {
+      movie1.requestFullscreen();
+    } else if (movie1.mozRequestFullScreen) {
+      movie1.mozRequestFullScreen();
+    } else if (movie1.webkitRequestFullScreen) {
+      movie1.webkitRequestFullScreen();
+    } else if (movie1.msRequestFullScreen) {
+      movie1.msRequestFullScreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullScreen) {
+      document.webkitExitFullScreen();
+    } else if (document.msExitFullScreen) {
+      document.msExitFullScreen();
+    }
+  }
 }
