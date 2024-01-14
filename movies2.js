@@ -425,3 +425,23 @@ function toggleFullScreen() {
     }
   }
 }
+function rewind() {
+  movie1.currentTime -= 10;
+}
+function fastForward() {
+  movie1.currentTime += 10;
+}
+function changePlaybackSpeed(speed) {
+  movie1.playbackRate = speed;
+}
+function enterPiP() {
+  if (document.pictureInPictureEnabled) {
+    if (!document.pictureInPictureElement) {
+      movie1.requestPictureInPicture();
+    } else {
+      document.exitPictureInPicture();
+    }
+  } else {
+    console.error("Picture-in-picture not supported in this browser.");
+  }
+}
